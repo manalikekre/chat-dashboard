@@ -1,0 +1,376 @@
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.App {
+  display: grid;
+  align-items: start;
+  grid-template-columns:
+    minmax(auto, 80px) minmax(auto, 230px) minmax(auto, 360px)
+    minmax(auto, 652px);
+  justify-content: start;
+  grid-auto-flow: column;
+  grid-template-areas: "sidebar inbox friends chat";
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+/* .gradient-border {
+  width: 11px;
+  height: 100%;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 47%, #000000 100%);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+} */
+.divider {
+  width: 190px;
+  height: 1px;
+  background-color: #575858;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* sidebar start*/
+.sidebar {
+  /* width: 80px;
+  height: 100%;
+  background-color: #1d232a;
+  position: absolute;
+  z-index: 10; */
+  height: 100vh;
+  background-color: #1d232a;
+  z-index: 10;
+  grid-area: sidebar;
+  border-image: linear-gradient(90deg, black 47%, white 100%);
+  border-right-width: 6px;
+  border-style: solid;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+}
+.hamburger {
+  width: 16px;
+  height: 12px;
+  margin: 28px;
+  background-image: url("./images/hamburger-menu-icon.png");
+  margin-bottom: 44px;
+  cursor: pointer;
+}
+.messenger-icon {
+  width: 41px;
+  height: 40px;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+.messenger {
+  /* padding: 10px; */
+  /* margin: 0px 8px; */
+  padding: 4px 1px;
+  margin: 0px 8px;
+  cursor: pointer;
+  height: 60px;
+}
+.sidebar .selected {
+  width: 95px;
+  height: 60px;
+  border-radius: 4px;
+  background-color: #282e36;
+  z-index: 2;
+  position: sticky;
+}
+.whatsapp {
+  background-image: url("./images/W.png");
+}
+.facebook {
+  background-image: url("./images/FB.png");
+}
+.viber {
+  background-image: url("./images/V.png");
+}
+.skype {
+  background-image: url("./images/S.png");
+}
+.nimbuzz {
+  background-image: url("./images/N.png");
+}
+
+/*sidebar end*/
+
+/*inbox start*/
+.inbox {
+  /* width: 230px;
+  height: 100%;
+  background-color: #282e36;
+  position: absolute;
+  left: 80px;
+  z-index: 100; */
+  height: 100%;
+  background-color: #282e36;
+  z-index: 100;
+  grid-area: inbox;
+}
+.inbox .title {
+  font-size: 22px;
+  line-height: 20px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 28px;
+  margin-top: 28px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+.add-contact {
+  background-image: url("./images/add-contact-button.png");
+  width: 35px;
+  height: 35px;
+  border-radius: 17px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffff;
+  display: inline-block;
+  right: 20px;
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+}
+.inbox .menu {
+  font-size: 14px;
+  line-height: 38px;
+  color: #a0a4a7;
+  font-weight: 400;
+  margin-left: 18px;
+  text-align: left;
+  margin-right: 22px;
+}
+
+.inbox .menu .menu-item div {
+  display: inline;
+}
+.menu-item {
+  max-width: 190px;
+  cursor: pointer;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.inbox .count {
+  font-size: 11px;
+  line-height: 38px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+.inbox .selected {
+  /* width: 190px; */
+  height: 36px;
+  border-radius: 4px;
+  /* filter: drop-shadow(1px 1.732px 1px rgba(0, 0, 0, 0.06)); */
+  background-color: #404a53;
+}
+.menu-category {
+  margin-left: 10px;
+}
+/* inbox end */
+
+/* friends list start*/
+.friends-list {
+  /* width: 360px;
+  height: 100%;
+  background-image: linear-gradient(-67deg, #242a31 0%, #2d343c 100%);
+  position: absolute;
+  left: 310px;
+  z-index: 100;
+  padding-top: 20px; */
+  height: 100%;
+  background-image: linear-gradient(-67deg, #242a31 0%, #2d343c 100%);
+  z-index: 100;
+  padding-top: 20px;
+  grid-area: friends;
+}
+.friends-list .search-box {
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 20px; */
+}
+.friends-list .search-field {
+  width: 309px;
+  height: 40px;
+  border-radius: 20px;
+  filter: drop-shadow(0.5px 0.866px 0.5px rgba(0, 0, 0, 0.06));
+  background-color: #363d45;
+  border: none;
+  outline: none;
+  padding-inline-end: 30px;
+  padding-inline-start: 52px;
+}
+.friends-list .search-icon {
+  background-image: url("./images/Search.png");
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 32px;
+  margin-left: 17px;
+  display: inline-block;
+  z-index: 10000;
+}
+.search-text-box {
+  display: inline-block;
+}
+.friends-list .search-field,
+.friends-list .search-field::placeholder {
+  font-size: 14px;
+  line-height: 38px;
+  color: #868b8e;
+  font-weight: 500;
+}
+.friends-list .divider {
+  width: 100%;
+}
+.friend-area .online {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #2dc100;
+  margin-left: 14px;
+}
+
+.friend-area .friend-dp {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #000000;
+  margin-left: 25px;
+  position: absolute;
+}
+.friend-area .more {
+  width: 16px;
+  height: 4px;
+  background-image: url("./images/more.png");
+  margin-top: 4px;
+}
+.friend-area .time {
+  font-size: 11px;
+  /* line-height: 44px; */
+  color: #ffffff;
+  font-weight: 500;
+  text-align: right;
+}
+.friend-area .message {
+  width: 199px;
+  height: 31px;
+  font-size: 14px;
+  /* line-height: 18px; */
+  color: #ffffff;
+  font-weight: 300;
+  text-align: left;
+}
+.friend-area .name {
+  font-size: 16px;
+  /* line-height: 38px; */
+  color: #ffffff;
+  font-weight: 500;
+  /* text-align: left; */
+}
+.friend-preview {
+  /* margin-right: 20px; */
+  margin-left: 90px;
+  margin-bottom: 20px;
+}
+.friend-dp.\31 {
+  background-image: url("./images/dp-1.png");
+}
+.friend-dp.\32 {
+  background-image: url("./images/dp-2.png");
+}
+.friend-dp.\33 {
+  background-image: url("./images/dp-3.png");
+}
+.friend-dp.\34 {
+  background-image: url("./images/dp-4.png");
+}
+.friend-dp.\35 {
+  background-image: url("./images/dp-5.png");
+}
+.friend-dp.\36 {
+  background-image: url("./images/dp-6.png");
+}
+.friend-preview .line-one {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.friend-area .divider {
+  width: 50px;
+  height: 1px;
+  /* background-color: #a58f8f; */
+  margin-left: 25px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.friend-area {
+  margin-bottom: 25px;
+  display: flex;
+  align-content: flex-start;
+  flex-direction: row;
+  flex-flow: row wrap;
+  cursor: pointer;
+}
+.friend-area .selected {
+  width: 3px;
+  height: 100px;
+  filter: drop-shadow(2.5px 4.33px 2.5px rgba(43, 128, 255, 0.75));
+  background-image: linear-gradient(-90deg, #258bed 0%, #39bcf3 100%);
+  align-self: start;
+  margin-top: -10px;
+}
+.content {
+  align-self: center;
+  margin-right: 20px;
+  flex-grow: 2;
+}
+/* friends list end*/
+
+/*messenger start*/
+.chat-area {
+  /* width: 652px;
+  height: 100%;
+  position: absolute;
+  left: 670px;
+  z-index: 100;
+  background-color: #f6f7f7; */
+  height: 100%;
+  z-index: 100;
+  background-color: #f6f7f7;
+  grid-area: chat;
+}
+.top-bar div {
+  display: inline-block;
+}
+.top-bar .icon {
+  width: 21px;
+  height: 21px;
+  background-repeat: no-repeat;
+}
+.top-bar .favourite {
+  background-image: url("./images/favourite.png");
+}
+.top-bar .call {
+  background-image: url("./images/Call.png");
+}
+.top-bar .video-call {
+  background-image: url("./images/video-call.png");
+}
+
+/*messenger end*/
